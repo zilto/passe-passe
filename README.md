@@ -26,15 +26,15 @@ optional arguments:
 ## CLI Screenshot
 Calling -set *website* will generate 4 prompts: session key (encryption secret), email, username, and password
 
-![credentials_prompt](./docs/credentials_prompt.png)
+![credentials_prompt](./docs/credentials_prompt.PNG)
 
 Calling -get *website* will ask you for the session key (encryption secret) used at encryption (when -set was called)
 
-![credentials_get](./docs/credentials_get.png)
+![credentials_get](./docs/credentials_get.PNG)
 
 Calling -list *website* will print a list of stored entries that do not have the flag "hidden" set to True.
 
-![credentials_list](./docs/credentials_list.png)
+![credentials_list](./docs/credentials_list.PNG)
 
 ## Motivation
 This project was built after one year of coding during some summer free time (2020). I wanted to build a tool I would use, and make it polished. This goal was a great source of motivation to structure a problem, and then finding a strategy to solve it through all the documentations.
