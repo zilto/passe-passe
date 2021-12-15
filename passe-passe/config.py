@@ -1,2 +1,2 @@
-DBDIR = "../sql-database/"
+DBDIR = "./sql-database/"
 DBNAME = "passe-passe.sqlite"

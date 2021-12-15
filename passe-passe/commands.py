@@ -1,3 +1,4 @@
+from pathlib import Path
 import argparse
 
 import auth
@@ -20,22 +21,30 @@ def parse_arguments():
 
 
 def create_credentials(website, session_key):
-    credentials = {website: {"email" : input("Enter email: "),
-                             "username" : input("Enter username: "),
-                             "password" : input("Enter password: ")}
-                   }
+    credentials = {
+        website: {
+            "email" : input("Enter email: "),
+            "username" : input("Enter username: "),
+            "password" : input("Enter password: ")
+        }
+    }
+    
     crypt_cred = auth.encrypt_AES(session_key, credentials)
-    cred_obj = models.Credentials(cipher = crypt_cred["cipher"],
-                                  kdfsalt = crypt_cred["kdfsalt"],
-                                  ciphertext = crypt_cred["ciphertext"],
-                                  nonce = crypt_cred["nonce"],
-                                  mac = crypt_cred["mac"])
+    
+    cred_obj = models.Credentials(
+        cipher = crypt_cred["cipher"],
+        kdfsalt = crypt_cred["kdfsalt"],
+        ciphertext = crypt_cred["ciphertext"],
+        nonce = crypt_cred["nonce"],
+        mac = crypt_cred["mac"])
+    
     return cred_obj
 
 
 def main():
     args = vars(parse_arguments())
-    session = models.initialize(config.DBDIR + config.DBNAME)
+    directory = Path(config.DBDIR + config.DBNAME)
+    session = models.initialize(str(directory))
     print("\nSQL session initialized.\n")
 
     if args["get"] or args["set"]:

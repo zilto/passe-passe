@@ -46,7 +46,7 @@ class Credentials(DBMixin, Base):
 
 
 def list_all(session):
-    query = session.query(Registry).filter(Registry.flag == True).order_by(Registry.website).all()
+    query = session.query(Registry).filter(Registry.flag == False).order_by(Registry.website).all()
     print("ALL ENTRIES".center(40, '#'))
     for count, entry in enumerate(query):
         print(count, "-\t", entry.website)
@@ -66,4 +66,5 @@ def remove_entry(session, website):
     session.query(Registry).filter(Registry.website == website).delete()
 
 def update_entry(session, website):
+    # TODO
     pass

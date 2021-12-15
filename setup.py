@@ -14,6 +14,6 @@ setup(name="passe-passe",
       packages=['passe-passe'],
       author="Thierry Jean",
       description="".join("""
-          Commandline program to encrypt credentials
+          Commandline tool to encrypt credentials
       """.strip().split('\n')),
       install_requires=requires)
