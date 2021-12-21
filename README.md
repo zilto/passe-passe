@@ -37,7 +37,7 @@ Calling -list *website* will print a list of stored entries that do not have the
 ![credentials_list](./docs/credentials_list.PNG)
 
 ## Motivation
-This project was built after one year of coding during some summer free time (2020). I wanted to build a tool I would use, and make it polished. This goal was a great source of motivation to structure a problem, and then finding a strategy to solve it through all the documentations.
+This project was built after one year of coding during my summer free time (2020). I wanted to build a tool I would use, and make the final result polished. Working with a concrete purpose in mind was a great source of motivation to structure the problem, devise a strategy to solve it, through all the documentations, and code the solution.
 
 ## Things I've learned
 This project introduced me to various concepts:
